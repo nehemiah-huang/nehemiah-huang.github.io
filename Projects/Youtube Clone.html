@@ -1,526 +1,288 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>
-            Youtube Clone Project
-        </title>
-        <link rel="Stylesheet" href="Styles/video.css">
-        <link rel="Stylesheet" href="Styles/Headers.css">
-        <link rel="Stylesheet" href="Styles/general.css">
-        <link rel="Stylesheet" href="Styles/Sidebar.css">
-        <link rel="Stylesheet" href="Styles/Short.css">
-    </head>
-    <body>
-        <div class="Header">
-            <div class="Left-Section">
-                <img class="hamburger-menu" 
-                src="Logos or Icons/hamburger-menu.svg">
-                <img class="youtube-logo" 
-                src="Logos or Icons/youtube-logo.svg">
-            </div>
-
-            <div class="Middle-Section">
-                <input class="Search-bar" type="text" placeholder="Search">
-                <button class="Search-button">
-                    <img class="Search-icon" src="Logos or Icons/search.svg">
-                    <div class="tooltip">Search</div>
-                </button>
-                <button class="Voice-Search-Button">
-                    <img class="Voice-Search-Icon" src="Logos or Icons/voice-search-icon.svg">
-                    <div class="tooltip">Search with voice</div>
-                </button>
-            </div>
-
-            <div class="Right-Section">
-                <button class="Upload-Button">
-                    <img class="Upload-Icon" src="Logos or Icons/upload.svg">
-                    <div class="tooltip">Upload</div>
-                </button>
-                <button class="youtube-apps-button">
-                    <img class="Youtube-apps-icon" src="Logos or Icons/youtube-apps.svg">
-                    <div class="tooltip">Youtube Apps</div>
-                </button>
-                <div class="Notification-icon-container">
-                    <button class="Notifications-Button">
-                        <img class="Notifications-icon" src="Logos or Icons/notifications.svg">
-                        <div class="tooltip">Notifications</div>
-                        <div class="notification-count">2</div>
-                    </button>
-                </div>
-                <img class="Current-User-picture" src="photos/www.jpg">
-            </div>
-            
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube Clone Project</title>
+    <link rel="Stylesheet" href="/Styles/video.css">
+    <link rel="Stylesheet" href="/Styles/Headers.css">
+    <link rel="Stylesheet" href="/Styles/general.css">
+    <link rel="Stylesheet" href="/Styles/Sidebar.css">
+    <link rel="Stylesheet" href="/Styles/Short.css">
+</head>
+<body>
+    <div class="Header">
+        <div class="Left-Section">
+            <img class="hamburger-menu" src="/Logos or Icons/hamburger-menu.svg">
+            <img class="youtube-logo" src="/Logos or Icons/youtube-logo.svg">
         </div>
 
-        <div class="Sidebar">
-            <div class="Sidebar-link">
-                <button class="Home-Button">
-                    <img class="Home-Button-Logo" src="Logos or Icons/home.svg">
-                    <p class="Home-Button-Name">Home</p>
+        <div class="Middle-Section">
+            <input class="Search-bar" type="text" placeholder="Search">
+            <button class="Search-button">
+                <img class="Search-icon" src="/Logos or Icons/search.svg">
+                <div class="tooltip">Search</div>
+            </button>
+            <button class="Voice-Search-Button">
+                <img class="Voice-Search-Icon" src="/Logos or Icons/voice-search-icon.svg">
+                <div class="tooltip">Search with voice</div>
+            </button>
+        </div>
+
+        <div class="Right-Section">
+            <button class="Upload-Button">
+                <img class="Upload-Icon" src="/Logos or Icons/upload.svg">
+                <div class="tooltip">Upload</div>
+            </button>
+            <button class="youtube-apps-button">
+                <img class="Youtube-apps-icon" src="/Logos or Icons/youtube-apps.svg">
+                <div class="tooltip">Youtube Apps</div>
+            </button>
+            <div class="Notification-icon-container">
+                <button class="Notifications-Button">
+                    <img class="Notifications-icon" src="/Logos or Icons/notifications.svg">
+                    <div class="tooltip">Notifications</div>
+                    <div class="notification-count">2</div>
                 </button>
             </div>
-            <div class="Sidebar-link">
-                <button class="Shorts-Button">
-                    <div class="Shorts-Logo-container">
-                        <img class="Shorts-Button-Logo" src="Logos or Icons/YouTube-Shorts-Black-1024x768.png" alt="Shorts Logo">
-                    </div>
-                    <p class="Shorts-Button-Name">Shorts</p>
-                </button>
+            <img class="Current-User-picture" src="/photos/www.jpg">
+        </div>
+    </div>
+
+    <div class="Sidebar">
+        <div class="Sidebar-link">
+            <button class="Home-Button">
+                <img class="Home-Button-Logo" src="/Logos or Icons/home.svg">
+                <p class="Home-Button-Name">Home</p>
+            </button>
+        </div>
+        <div class="Sidebar-link">
+            <button class="Shorts-Button">
+                <div class="Shorts-Logo-container">
+                    <img class="Shorts-Button-Logo" src="/Logos or Icons/YouTube-Shorts-Black-1024x768.png" alt="Shorts Logo">
+                </div>
+                <p class="Shorts-Button-Name">Shorts</p>
+            </button>
+        </div>
+
+        <div class="Sidebar-link">
+            <button class="Suscription-Button">
+                <img class="Home-Button-Logo" src="/Logos or Icons/subscriptions.svg">
+                <p class="Suscription-Button-Name">Suscriptions</p> 
+            </button>
+        </div>
+
+        <div class="Sidebar-link">
+            <button class="Library-Button">
+                <img class="Home-Button-Logo" src="/Logos or Icons/library.svg">
+                <p class="Library-Button-Name">Library</p> 
+            </button>
+        </div>
+    </div>
+
+    <div class="Video-grid">
+        <div class="Video-Preview">
+            <div class="Thumbnail-row">
+                <img class="Thumbnail" src="/photos/2b.jpg">
+                <div class="Video-time">14:20</div>
             </div>
 
-            <div class="Sidebar-link">
-                <button class="Suscription-Button">
-                    <img class="Home-Button-Logo" src="Logos or Icons/subscriptions.svg">
-                    <p class="Suscription-Button-Name">Suscriptions</p> 
-                </button>
-            </div>
+            <div class="Video-info-grid">
+                <div class="Channel-picture">
+                    <a href="https://www.youtube.com/@IGN">
+                        <img class="Profile-picture" src="/photos/bsf.jpg">
+                    </a>
+                </div>
+                <div class="Video-info">
+                    <a href="https://www.youtube.com/@4kanimedia">
+                        <p class="Video-title">
+                            Talking Tech and AI with Google CEO Sundar Pichai!
+                        </p>
+                    </a>
 
-            <div class="Sidebar-link">
-                <button class="Library-Button">
-                    <img class="Home-Button-Logo" src="Logos or Icons/library.svg">
-                    <p class="Library-Button-Name">Library</p> 
-                </button>
+                    <p class="Video-Author">
+                        Marques Brownlee
+                    </p>
+                    <p class="Video-Stats">
+                        3 .4M views &#183 6 months ago
+                    </p>
+                </div>
             </div>
         </div>
 
-
-        <div class="Video-grid">
-            <div class="Video-Preview">
-                <div class="Thumbnail-row">
-                    <img class="Thumbnail" src="photos/2b.jpg">
-                    <div class="Video-time">14:20</div>
-                </div>
-    
-                <div class="Video-info-grid">
-                    <div class="Channel-picture">
-                        <a href="https://www.youtube.com/@IGN">
-                            <img class="Profile-picture" src="photos/bsf.jpg">
-                        </a>
-                    </div>
-                    <div class="Video-info">
-                        <a href="https://www.youtube.com/@4kanimedia">
-                            <p class="Video-title">
-                                Talking Tech and AI with Google CEO Sundar Pichai!
-                            </p>
-                        </a>
-
-                        <p class="Video-Author">
-                            Marques Brownlee
-                        </p>
-                        <p class="Video-Stats">
-                            3 .4M views &#183 6 months ago
-                        </p>
-                    </div>
-                    
-                    
-                </div>
-    
-            </div>
-    
-    
-            <div class="Video-Preview">
-                <div class="Thumbnail-row">
-                    <img class="Thumbnail" src="photos/asd.jpg">
-                    <div class="Video-time">9:16</div>
-                </div>
-    
-                <div class="Video-info-grid">
-                    <div class="Channel-picture">
-                        <a href="https://www.youtube.com/@IGN">
-                            <img class="Profile-picture" src="photos/Eli.jpg">
-                        </a>
-                    </div>
-                    <div class="Video-info">
-                        <a href="https://www.youtube.com/watch?v=tXfTDSMcvQw">
-                            <p class="Video-title">
-                                Best Jett Moments
-                            </p>
-                        </a>
-
-                        <p class="Video-Author">
-                            Eli Dzokoto
-                        </p>
-                        <p class="Video-Stats">
-                            4 .4M views &#183 9 months ago
-                        </p>
-                    </div>
-                    
-                    
-                </div>
-    
+        <div class="Video-Preview">
+            <div class="Thumbnail-row">
+                <img class="Thumbnail" src="/photos/asd.jpg">
+                <div class="Video-time">9:16</div>
             </div>
 
-            <div class="Video-Preview">
-                <div class="Thumbnail-row">
-                    <img class="Thumbnail" src="photos/21620.jpg">
-                    <div class="Video-time">1:12:00</div>
+            <div class="Video-info-grid">
+                <div class="Channel-picture">
+                    <a href="https://www.youtube.com/@IGN">
+                        <img class="Profile-picture" src="/photos/Eli.jpg">
+                    </a>
                 </div>
-    
-                <div class="Video-info-grid">
-                    <div class="Channel-picture">
-                        <a href="https://www.youtube.com/@IGN">
-                            <img class="Profile-picture" src="photos/gggg.jpg">
-                        </a>
-                    </div>
-                    <div class="Video-info">
-                        <a href="https://youtu.be/dkURoyTidq8?si=m5nRcUnODTAbkf9L">
-                            <p class="Video-title">
-                                Vocaloid Songs of the Year
-                            </p>
-                        </a>
+                <div class="Video-info">
+                    <a href="https://www.youtube.com/watch?v=tXfTDSMcvQw">
+                        <p class="Video-title">
+                            Best Jett Moments
+                        </p>
+                    </a>
 
-                        <p class="Video-Author">
-                            Dark Shadow
-                        </p>
-                        <p class="Video-Stats">
-                            1 .4M views &#183 6 months ago
-                        </p>
-                    </div>
-                    
-                    
+                    <p class="Video-Author">
+                        Eli Dzokoto
+                    </p>
+                    <p class="Video-Stats">
+                        4 .4M views &#183 9 months ago
+                    </p>
                 </div>
-    
             </div>
-
-            <div class="Video-Preview">
-                <div class="Thumbnail-row">
-                    <img class="Thumbnail" src="photos/vfvf.jpg">
-                    <div class="Video-time">3:16</div>
-                </div>
-    
-                <div class="Video-info-grid">
-                    <div class="Channel-picture">
-                        <a href="https://www.youtube.com/@IGN">
-                            <img class="Profile-picture" src="photos/Richmond.jpg">
-                        </a>
-                    </div>
-                    <div class="Video-info">
-                        <a href="https://www.youtube.com/watch?v=tXfTDSMcvQw">
-                            <p class="Video-title">
-                                Almost HAD ME!!!!
-                            </p>
-                        </a>
-
-                        <p class="Video-Author">
-                            1isthenumber
-                        </p>
-                        <p class="Video-Stats">
-                            1 .4M views &#183 2 years ago
-                        </p>
-                    </div>
-                    
-                    
-                </div>
-    
-            </div>
-
-            <div class="Video-Preview">
-                <div class="Thumbnail-row">
-                    <img class="Thumbnail" src="photos/train.jpg">
-                    <div class="Video-time">5:12:01</div>
-                </div>
-    
-                <div class="Video-info-grid">
-                    <div class="Channel-picture">
-                        <a href="https://www.youtube.com/@IGN">
-                            <img class="Profile-picture" src="photos/www.jpg">
-                        </a>
-                    </div>
-                    <div class="Video-info">
-                        <a href="https://youtu.be/dkURoyTidq8?si=m5nRcUnODTAbkf9L">
-                            <p class="Video-title">
-                                Relaxing ASMR
-                            </p>
-                        </a>
-
-                        <p class="Video-Author">
-                            Hilly
-                        </p>
-                        <p class="Video-Stats">
-                            19 .4M views &#183 1 year ago
-                        </p>
-                    </div>
-                    
-                    
-                </div>
-    
-            </div>
-
-            <div class="Video-Preview">
-                <div class="Thumbnail-row">
-                    <img class="Thumbnail" src="photos/Lamia.jpeg">
-                    <div class="Video-time">10:00</div>
-                </div>
-    
-                <div class="Video-info-grid">
-                    <div class="Channel-picture">
-                        <a href="https://www.youtube.com/@IGN">
-                            <img class="Profile-picture" src="photos/miku.jpg">
-                        </a>
-                    </div>
-                    <div class="Video-info">
-                        <a href="https://www.youtube.com/watch?v=MeyhMeNaEc0">
-                            <p class="Video-title">
-                                Don't Watch With Your Parents!!!
-                            </p>
-                        </a>
-
-                        <p class="Video-Author">
-                            Sebaul
-                        </p>
-                        <p class="Video-Stats">
-                            19 .4M views &#183 2 days ago
-                        </p>
-                    </div>
-                    
-                    
-                </div>
-    
-            </div>
-
-            <div class="Video-Preview">
-                <div class="Thumbnail-row">
-                    <img class="Thumbnail" src="photos/gg.jpg">
-                    <div class="Video-time">6:23</div>
-                </div>
-    
-                <div class="Video-info-grid">
-                    <div class="Channel-picture">
-                        <a href="https://www.youtube.com/@IGN">
-                            <img class="Profile-picture" src="photos/aaxx.jpg">
-                        </a>
-                    </div>
-                    <div class="Video-info">
-
-                        <a href="https://www.youtube.com/watch?v=agRcHZ-Ywzw">
-                            <p class="Video-title">
-                                Espada's Ranked
-                            </p>
-                        </a>
-
-                        <p class="Video-Author">
-                            J.J
-                        </p>
-                        <p class="Video-Stats">
-                            192k views &#183 3 years ago
-                        </p>
-                    </div>
-                    
-                    
-                </div>
-    
-            </div>
-
-            <div class="Video-Preview">
-                <div class="Thumbnail-row">
-                    <img class="Thumbnail" src="photos/aa.jpg">
-                    <div class="Video-time">3:10</div>
-                </div>
-    
-                <div class="Video-info-grid">
-                    <div class="Channel-picture">
-                        <a href="https://www.youtube.com/@IGN">
-                            <img class="Profile-picture" src="photos/pp.jpg">
-                        </a>
-                    </div>
-                    <div class="Video-info">
-                        <a href="https://www.youtube.com/watch?v=42WSsgXJ9Cw">
-                            <p class="Video-title">
-                                Why you should summon on Bianca
-                            </p>
-                        </a>
-
-                        <p class="Video-Author">
-                            PGR
-                        </p>
-                        <p class="Video-Stats">
-                            1.1M views &#183 4 months ago
-                        </p>
-                    </div>
-                    
-                    
-                </div>
-    
-            </div>
-
-            <div class="Video-Preview">
-                <div class="Thumbnail-row">
-                    <img class="Thumbnail" src="photos/asdasd.jpg">
-                    <div class="Video-time">6:23</div>
-                </div>
-    
-                <div class="Video-info-grid">
-                    <div class="Channel-picture">
-                        <a href="https://www.youtube.com/@IGN">
-                            <img class="Profile-picture" src="photos/vvv.jpg">
-                        </a>
-                    </div>
-                    <div class="Video-info">
-                        <a href="https://www.youtube.com/watch?v=OGGLjPJTH7M">
-                            <p class="Video-title">
-                                Wrong video
-                            </p>
-                        </a>
-
-                        <p class="Video-Author">
-                            Mommymilk
-                        </p>
-                        <p class="Video-Stats">
-                            192k views &#183 2 years ago
-                        </p>
-                    </div>
-                    
-                    
-                </div>
-    
-            </div>
-
-            <div class="Video-Preview">
-                <div class="Thumbnail-row">
-                    <img class="Thumbnail" src="photos/ggg.jpg">
-                    <div class="Video-time">6:23</div>
-                </div>
-    
-                <div class="Video-info-grid">
-                    <div class="Channel-picture">
-                        <a href="https://www.youtube.com/@IGN">
-                            <img class="Profile-picture" src="photos/21623.jpg">
-                        </a>
-                    </div>
-                    <div class="Video-info">
-                        <a href="https://www.youtube.com/watch?v=iOn83jqcHcE">
-                            <p class="Video-title">
-                                Neon movement diff
-                            </p>
-                        </a>
-
-                        <p class="Video-Author">
-                            WhiteSatan
-                        </p>
-                        <p class="Video-Stats">
-                            500k views &#183 8 months ago
-                        </p>
-                    </div>
-                    
-                    
-                </div>
-    
-            </div>
-    
         </div>
 
-        <div class="Shorts-Container">
-
-            <div class="Shorts-Header">
-                <div class="Logo">
-                    <img class="Short-logo" src="Logos or Icons/youtube-shorts-logo.png">
-                    <p class="Shorts-Logo-Text">SHORTS</p>
-                </div>
+        <div class="Video-Preview">
+            <div class="Thumbnail-row">
+                <img class="Thumbnail" src="/photos/21620.jpg">
+                <div class="Video-time">1:12:00</div>
             </div>
 
-            <a href="https://www.youtube.com/shorts/LpVhxFB_L7A">
-                <div class="Shorts-Body">
-                    <div class="Shorts-Video-grid">
-                        <img class="Shorts-Thumbnail" src="photos/ffff.jpg">
-                        <div class="Shorts-Video-stats">
-                            <p class="Shorts-Video-title">Best Anime Mommy's that will actually step on you</p>
-                        </div>
-                        <div>
-                            <p class="Shorts-No-views">80K views</p>
-                        </div>
-                    </div>
-            </a>
-
-
-                <a href="https://www.youtube.com/shorts/mU_XWiafQpE">
-                    <div class="Shorts-Video-grid">
-                        <img class="Shorts-Thumbnail" src="photos/anime-anime-girls-digital-art-artwork-portrait-display-hd-wallpaper-preview.jpg">
-                        <div class="Shorts-Video-stats">
-                            <p class="Shorts-Video-title">Anime Girl Spotlight: Mystical Adventures</p>
-                        </div>
-                        <div>
-                            <p class="Shorts-No-views">100K views</p>
-                        </div>
-                    </div>
-                </a>
-
-
-                <a href="https://www.youtube.com/shorts/mU_XWiafQpE">
-                    <div class="Shorts-Video-grid">
-                        <img class="Shorts-Thumbnail" src="photos/anime-anime-girls-digital-digital-art-2d-hd-wallpaper-preview.jpg">
-                        <div class="Shorts-Video-stats">
-                            <p class="Shorts-Video-title">Short and Sweet: Charming Anime Girls Moments</p>
-                        </div>
-                        <div>
-                            <p class="Shorts-No-views">30K views</p>
-                        </div>
-                    </div>
-                </a>
-
-
-                <a href="https://www.youtube.com/shorts/mU_XWiafQpE">
-                    <div class="Shorts-Video-grid">
-                        <img class="Shorts-Thumbnail" src="photos/HD-wallpaper-anime-anime-girls-digital-art-artwork-portrait-display-vertical-2d.jpg">
-                        <div class="Shorts-Video-stats">
-                            <p class="Shorts-Video-title">Cute and Quirky: Anime Girls in a Nutshell</p>
-                        </div>
-                        <div>
-                            <p class="Shorts-No-views">2.2M views</p>
-                        </div>
-                    </div>
-                </a>
-
-
-                <a href="https://www.youtube.com/shorts/mU_XWiafQpE">
-                    <div class="Shorts-Video-grid">
-                        <img class="Shorts-Thumbnail" src="photos/yuta.jpg">
-                        <div class="Shorts-Video-stats">Yuta is Actually OP</p>
-                        </div>
-                        <div>
-                            <p class="Shorts-No-views">2.2M views</p>
-                        </div>
-                    </div>
-                </a>
-
-
-                <a href="https://www.youtube.com/shorts/mU_XWiafQpE">
-                    <div class="Shorts-Video-grid">
-                        <img class="Shorts-Thumbnail" src="photos/Lamia.jpeg">
-                        <div class="Shorts-Video-stats">
-                            <p class="Shorts-Video-title">Lamia PGR</p>
-                        </div>
-                        <div>
-                            <p class="Shorts-No-views">2.2M views</p>
-                        </div>
-                    </div>
-                </a>
-
-
-            <a href="https://www.youtube.com/shorts/yDUk9p4uz8U">
-                <div class="Shorts-Video-grid">
-                    <img class="Shorts-Thumbnail" src="photos/jujutsu.jpg">
-                    <!--
-                        <video class="Shorts-Thumbnail" autoplay loop muted>
-                            <source src="photos/super-saiyan-goku-ultra-instinct-moewalls-com.mp4" type="video/mp4">
-                        </video>
-                     --> 
-                    <div class="Shorts-Video-stats">
-                        <p class="Shorts-Video-title">Yuta's Secret Power</p>
-                    </div>
-                    <div>
-                        <p class="Shorts-No-views">3.3M views</p>
-                    </div>
+            <div class="Video-info-grid">
+                <div class="Channel-picture">
+                    <a href="https://www.youtube.com/@IGN">
+                        <img class="Profile-picture" src="/photos/gggg.jpg">
+                    </a>
                 </div>
-            </a>
+                <div class="Video-info">
+                    <a href="https://youtu.be/dkURoyTidq8?si=m5nRcUnODTAbkf9L">
+                        <p class="Video-title">
+                            Vocaloid Songs of the Year
+                        </p>
+                    </a>
 
-
-
+                    <p class="Video-Author">
+                        Dark Shadow
+                    </p>
+                    <p class="Video-Stats">
+                        1 .4M views &#183 6 months ago
+                    </p>
+                </div>
             </div>
-            
-
         </div>
-        
-    </body>
+
+        <div class="Video-Preview">
+            <div class="Thumbnail-row">
+                <img class="Thumbnail" src="/photos/vfvf.jpg">
+                <div class="Video-time">3:16</div>
+            </div>
+
+            <div class="Video-info-grid">
+                <div class="Channel-picture">
+                    <a href="https://www.youtube.com/@IGN">
+                        <img class="Profile-picture" src="/photos/Richmond.jpg">
+                    </a>
+                </div>
+                <div class="Video-info">
+                    <a href="https://www.youtube.com/watch?v=tXfTDSMcvQw">
+                        <p class="Video-title">
+                            Almost HAD ME!!!!
+                        </p>
+                    </a>
+
+                    <p class="Video-Author">
+                        1isthenumber
+                    </p>
+                    <p class="Video-Stats">
+                        1 .4M views &#183 2 years ago
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="Video-Preview">
+            <div class="Thumbnail-row">
+                <img class="Thumbnail" src="/photos/train.jpg">
+                <div class="Video-time">5:12:01</div>
+            </div>
+
+            <div class="Video-info-grid">
+                <div class="Channel-picture">
+                    <a href="https://www.youtube.com/@IGN">
+                        <img class="Profile-picture" src="/photos/www.jpg">
+                    </a>
+                </div>
+                <div class="Video-info">
+                    <a href="https://youtu.be/dkURoyTidq8?si=m5nRcUnODTAbkf9L">
+                        <p class="Video-title">
+                            Relaxing ASMR
+                        </p>
+                    </a>
+
+                    <p class="Video-Author">
+                        Hilly
+                    </p>
+                    <p class="Video-Stats">
+                        19 .4M views &#183 1 year ago
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="Video-Preview">
+            <div class="Thumbnail-row">
+                <img class="Thumbnail" src="/photos/Lamia.jpeg">
+                <div class="Video-time">10:00</div>
+            </div>
+
+            <div class="Video-info-grid">
+                <div class="Channel-picture">
+                    <a href="https://www.youtube.com/@IGN">
+                        <img class="Profile-picture" src="/photos/miku.jpg">
+                    </a>
+                </div>
+                <div class="Video-info">
+                    <a href="https://www.youtube.com/watch?v=MeyhMeNaEc8">
+                        <p class="Video-title">
+                            Vocaloid Mix
+                        </p>
+                    </a>
+
+                    <p class="Video-Author">
+                        MoonDancer
+                    </p>
+                    <p class="Video-Stats">
+                        7.4M views &#183 3 months ago
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="Video-Preview">
+            <div class="Thumbnail-row">
+                <img class="Thumbnail" src="/photos/2365829.jpg">
+                <div class="Video-time">3:44</div>
+            </div>
+
+            <div class="Video-info-grid">
+                <div class="Channel-picture">
+                    <a href="https://www.youtube.com/@IGN">
+                        <img class="Profile-picture" src="/photos/www.jpg">
+                    </a>
+                </div>
+                <div class="Video-info">
+                    <a href="https://youtu.be/30TOfC6O05Y">
+                        <p class="Video-title">
+                            S3RL - Hentai
+                        </p>
+                    </a>
+
+                    <p class="Video-Author">
+                        S3RL
+                    </p>
+                    <p class="Video-Stats">
+                        900K views &#183 6 months ago
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
 </html>
