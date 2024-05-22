@@ -136,7 +136,7 @@ header {
     font-weight: 300;
 }
 #projects {
-    height: 110vh;
+    height: fit-content;
     padding-bottom: 2rem;
     padding-top: 10vh;
     background-attachment: scroll;
