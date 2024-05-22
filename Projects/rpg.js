@@ -95,7 +95,12 @@ button1.onclick = goStore;
 button2.onclick = goCave;
 button3.onclick = fightDragon;
 
+function updateBackground(location) {
+  document.body.className = location.name.toLowerCase();
+}
+
 function update(location) {
+  updateBackground(location);
   monsterStats.style.display = "none";
   button1.innerText = location["button text"][0];
   button2.innerText = location["button text"][1];
