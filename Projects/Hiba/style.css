@@ -190,7 +190,7 @@ h4 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
     animation: fadeInUp 1s ease 1s forwards;
 }
 
-.hero-cta {
+.hero-cta,.interactive {
     display: inline-block;
     color: #e0e0e0;
     text-decoration: none;
