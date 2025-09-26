@@ -84,7 +84,7 @@ function initNavigation() {
     });
 
     // ----- Scroll to top button -----
-    scrollToTopBtn.addEventListener('click', () => smoothScrollTo('body', 800));
+    scrollToTopBtn.addEventListener('click', () => smoothScrollTo('body', 100));
 
     // ----- Sticky Navbar & Scroll-to-top -----
     let lastScrollY = window.scrollY;
@@ -102,7 +102,7 @@ function initNavigation() {
 // ==============================
 // ====== SMOOTH SCROLLING ======
 // ==============================
-function smoothScrollTo(target, duration = 1000) {
+function smoothScrollTo(target, duration = 500) {
     const targetElement = document.querySelector(target);
     if (!targetElement) return;
 
