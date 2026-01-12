@@ -131,160 +131,198 @@ function smoothScrollTo(target, duration = 500) {
 
 // ==============================
 // ====== PARALLAX EFFECTS ======
-// ==============================
+// ==============================parallax-1
 function initParallaxEffects() {
+    // Existing parallax section
+    const parallaxSection = document.querySelector('.parallax-section');
     const parallaxColumns = document.querySelectorAll('.parallax-column');
-    const introContentItems = document.querySelectorAll('.intro-content > *');
-
-    const observerOptions = { threshold: 0.3, rootMargin: '0px 0px -100px 0px' };
-    const parallaxObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const delay = parseFloat(entry.target.dataset.delay) * 1900 || 0;
-                setTimeout(() => entry.target.classList.add('animate'), delay);
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    parallaxColumns.forEach(column => parallaxObserver.observe(column));
-    introContentItems.forEach((item, index) => {
-        item.dataset.delay = item.dataset.delay || index * 0.2;
-        parallaxObserver.observe(item);
-    });
+    
+    // Process section
+    const processSection = document.querySelector('.process-section');
+    const processSteps = document.querySelectorAll('.process-step');
+    
+    // Initial offsets for parallax section
+    const parallaxOffsets = [0, 300, 600];
+    
+    // Initial offsets for process section
+    const processOffsets = [0, 250, 500, 750];
+    
+    function updateParallax() {
+        // Update parallax section
+        if (parallaxSection && parallaxColumns.length > 0) {
+            const sectionRect = parallaxSection.getBoundingClientRect();
+            const sectionTop = sectionRect.top;
+            const sectionHeight = sectionRect.height;
+            const windowHeight = window.innerHeight;
+            
+            const scrollProgress = Math.max(0, Math.min(1, 
+                (windowHeight - sectionTop) / (windowHeight + sectionHeight * 0.5)
+            ));
+            
+            parallaxColumns.forEach((column, index) => {
+                const initialOffset = parallaxOffsets[index];
+                const newOffset = initialOffset * (1 - scrollProgress);
+                column.style.transform = `translateY(${newOffset}px)`;
+            });
+        }
+        
+        // Update process section
+        if (processSection && processSteps.length > 0) {
+            const sectionRect = processSection.getBoundingClientRect();
+            const sectionTop = sectionRect.top;
+            const sectionHeight = sectionRect.height;
+            const windowHeight = window.innerHeight;
+            
+            const scrollProgress = Math.max(0, Math.min(1, 
+                (windowHeight - sectionTop) / (windowHeight + sectionHeight * 0.5)
+            ));
+            
+            processSteps.forEach((step, index) => {
+                const initialOffset = processOffsets[index];
+                const newOffset = initialOffset * (1 - scrollProgress);
+                step.style.transform = `translateY(${newOffset}px)`;
+            });
+        }
+    }
+    
+    // Update on scroll
+    window.addEventListener('scroll', updateParallax);
+    // Initial call
+    updateParallax();
 }
 
 // reading section
 class ReadingsSlider {
-            constructor() {
-                this.slider = document.getElementById('sliderContainer');
-                this.prevBtn = document.getElementById('prevBtn');
-                this.nextBtn = document.getElementById('nextBtn');
-                this.cards = document.querySelectorAll('.reading-card');
-                
-                this.currentIndex = 0;
-                this.cardsToShow = this.getCardsToShow();
-                this.maxIndex = Math.max(0, this.cards.length - this.cardsToShow);
-                
-                this.init();
-            }
+    constructor() {
+        this.slider = document.getElementById('sliderContainer');
+        this.prevBtn = document.getElementById('prevBtn');
+        this.nextBtn = document.getElementById('nextBtn');
+        this.cards = document.querySelectorAll('.reading-card');
+        
+        this.currentIndex = 0;
+        this.cardsToShow = this.getCardsToShow();
+        this.maxIndex = Math.max(0, this.cards.length - this.cardsToShow);
+        
+        this.init();
+    }
 
-            getCardsToShow() {
-                if (window.innerWidth <= 768) {
-                    return 1; // Mobile: 1 card
-                } else if (window.innerWidth <= 1024) {
-                    return 2; // Tablet: 2 cards
-                } else {
-                    return 3; // Desktop: 3 cards
-                }
-            }
-
-            init() {
-                this.prevBtn.addEventListener('click', () => this.prevSlide());
-                this.nextBtn.addEventListener('click', () => this.nextSlide());
-                
-                // Touch/swipe support
-                let startX = 0;
-                let currentX = 0;
-                let isDragging = false;
-
-                this.slider.addEventListener('touchstart', (e) => {
-                    startX = e.touches[0].clientX;
-                    isDragging = true;
-                });
-
-                this.slider.addEventListener('touchmove', (e) => {
-                    if (!isDragging) return;
-                    currentX = e.touches[0].clientX;
-                });
-
-                this.slider.addEventListener('touchend', () => {
-                    if (!isDragging) return;
-                    
-                    const diff = startX - currentX;
-                    if (Math.abs(diff) > 50) {
-                        if (diff > 0) {
-                            this.nextSlide();
-                        } else {
-                            this.prevSlide();
-                        }
-                    }
-                    isDragging = false;
-                });
-
-                // Mouse drag support for desktop
-                this.slider.addEventListener('mousedown', (e) => {
-                    startX = e.clientX;
-                    isDragging = true;
-                    this.slider.style.cursor = 'grabbing';
-                });
-
-                document.addEventListener('mousemove', (e) => {
-                    if (!isDragging) return;
-                    currentX = e.clientX;
-                });
-
-                document.addEventListener('mouseup', () => {
-                    if (!isDragging) return;
-                    
-                    const diff = startX - currentX;
-                    if (Math.abs(diff) > 50) {
-                        if (diff > 0) {
-                            this.nextSlide();
-                        } else {
-                            this.prevSlide();
-                        }
-                    }
-                    isDragging = false;
-                    this.slider.style.cursor = 'grab';
-                });
-
-                // Handle window resize
-                window.addEventListener('resize', () => {
-                    this.cardsToShow = this.getCardsToShow();
-                    this.maxIndex = Math.max(0, this.cards.length - this.cardsToShow);
-                    this.currentIndex = Math.min(this.currentIndex, this.maxIndex);
-                    this.updateSlider();
-                });
-
-                this.updateButtons();
-            }
-
-            nextSlide() {
-                if (this.currentIndex < this.maxIndex) {
-                    this.currentIndex++;
-                    this.updateSlider();
-                }
-            }
-
-            prevSlide() {
-                if (this.currentIndex > 0) {
-                    this.currentIndex--;
-                    this.updateSlider();
-                }
-            }
-
-            updateSlider() {
-                const containerWidth = this.slider.parentElement.offsetWidth;
-                const totalGap = this.cardsToShow > 1 ? (this.cardsToShow - 1) * 32 : 0; // 2rem = 32px
-                const cardWidth = (containerWidth - totalGap) / this.cardsToShow;
-                const slideDistance = cardWidth * this.cardsToShow + totalGap;
-                const offset = -(this.currentIndex * slideDistance);
-                
-                this.slider.style.transform = `translateX(${offset}px)`;
-                this.updateButtons();
-            }
-
-            updateButtons() {
-                this.prevBtn.disabled = this.currentIndex === 0;
-                this.nextBtn.disabled = this.currentIndex >= this.maxIndex;
-            }
+    getCardsToShow() {
+        if (window.innerWidth <= 768) {
+            return 1; // Mobile: 1 card
+        } else if (window.innerWidth <= 1024) {
+            return 2; // Tablet: 2 cards
+        } else {
+            return 3; // Desktop: 3 cards
         }
+    }
 
-        // Initialize slider when DOM is loaded
-        document.addEventListener('DOMContentLoaded', () => {
-            new ReadingsSlider();
+    init() {
+        this.prevBtn.addEventListener('click', () => this.prevSlide());
+        this.nextBtn.addEventListener('click', () => this.nextSlide());
+        
+        // Touch/swipe support
+        let startX = 0;
+        let currentX = 0;
+        let isDragging = false;
+
+        this.slider.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            isDragging = true;
         });
+
+        this.slider.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            currentX = e.touches[0].clientX;
+        });
+
+        this.slider.addEventListener('touchend', () => {
+            if (!isDragging) return;
+            
+            const diff = startX - currentX;
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) {
+                    this.nextSlide();
+                } else {
+                    this.prevSlide();
+                }
+            }
+            isDragging = false;
+        });
+
+        // Mouse drag support for desktop
+        this.slider.addEventListener('mousedown', (e) => {
+            startX = e.clientX;
+            isDragging = true;
+            this.slider.style.cursor = 'grabbing';
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            currentX = e.clientX;
+        });
+
+        document.addEventListener('mouseup', () => {
+            if (!isDragging) return;
+            
+            const diff = startX - currentX;
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) {
+                    this.nextSlide();
+                } else {
+                    this.prevSlide();
+                }
+            }
+            isDragging = false;
+            this.slider.style.cursor = 'grab';
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            this.cardsToShow = this.getCardsToShow();
+            this.maxIndex = Math.max(0, this.cards.length - this.cardsToShow);
+            this.currentIndex = Math.min(this.currentIndex, this.maxIndex);
+            this.updateSlider();
+        });
+
+        this.updateButtons();
+    }
+
+    nextSlide() {
+        if (this.currentIndex < this.maxIndex) {
+            this.currentIndex++;
+            this.updateSlider();
+        }
+    }
+
+    prevSlide() {
+        if (this.currentIndex > 0) {
+            this.currentIndex--;
+            this.updateSlider();
+        }
+    }
+
+    updateSlider() {
+        const containerWidth = this.slider.parentElement.offsetWidth;
+        const totalGap = this.cardsToShow > 1 ? (this.cardsToShow - 1) * 32 : 0; // 2rem = 32px
+        const cardWidth = (containerWidth - totalGap) / this.cardsToShow;
+        const slideDistance = cardWidth * this.cardsToShow + totalGap;
+        const offset = -(this.currentIndex * slideDistance);
+        
+        this.slider.style.transform = `translateX(${offset}px)`;
+        this.updateButtons();
+    }
+
+    updateButtons() {
+        this.prevBtn.disabled = this.currentIndex === 0;
+        this.nextBtn.disabled = this.currentIndex >= this.maxIndex;
+    }
+}
+
+// Initialize everything when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    initParallaxEffects(); // Initialize both parallax effects
+    new ReadingsSlider();  // Initialize slider
+});
 
 // ==============================
 // ====== HOVER CARDS ============
