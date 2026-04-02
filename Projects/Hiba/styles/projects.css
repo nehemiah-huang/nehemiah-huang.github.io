@@ -1,5 +1,5 @@
 /* ===== PROJECTS FILTER PAGE ===== */
-/* Matches Hiba site design: dark bg, gold accents, Playfair + Inter */
+/* Hiba site design: dark bg, gold accents, Playfair + Inter */
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
 
@@ -21,7 +21,7 @@ body {
   padding: 3rem 3rem 4rem;
 }
 
-/* ===== PAGE HEADER ===== */
+/*  PAGE HEADER  */
 .page-header {
   margin-bottom: 3rem;
   border-bottom: 1px solid rgba(230, 230, 230, 0.08);
@@ -46,7 +46,7 @@ body {
   line-height: 1.7;
 }
 
-/* ===== MOBILE FILTER TOGGLE ===== */
+/*  MOBILE FILTER TOGGLE */
 .mobile-filter-toggle {
   display: none;
   align-items: center;

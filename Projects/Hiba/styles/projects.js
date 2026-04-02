@@ -1,7 +1,7 @@
-// ===== PROJECTS FILTER =====
-// Filters projects by industry, support type, and client type.
-// All three filters combine with AND logic — a project must match
-// at least one selection in each active filter group to be shown.
+/* PROJECTS FILTER 
+Filters projects by industry, support type, and client type.
+All three filters combine with AND logic — a project must match
+at least one selection in each active filter group to be shown. */
 
 (function () {
   const checkboxes   = document.querySelectorAll('input[type=checkbox]');
@@ -10,7 +10,7 @@
   const activeFiltersEl = document.getElementById('active-filters');
   const emptyState   = document.getElementById('empty-state');
 
-  // ── Apply filters ──────────────────────────────────────────────
+  // ── Apply filters 
   function applyFilters() {
     const industry = getChecked('industry');
     const support  = getChecked('support');
@@ -45,20 +45,20 @@
       .join('');
   }
 
-  // ── Helper: get checked values for a given data-type ──────────
+  // ── Helper: get checked values for a given data-type -- I dont remember
   function getChecked(type) {
     return Array.from(
       document.querySelectorAll('[data-type=' + type + ']:checked')
     ).map(cb => cb.dataset.val);
   }
 
-  // ── Clear all filters ─────────────────────────────────────────
+  // ── Clear all filters 
   window.clearAll = function () {
     checkboxes.forEach(cb => (cb.checked = false));
     applyFilters();
   };
 
-  // ── Mobile sidebar toggle ─────────────────────────────────────
+  // ── Mobile sidebar toggle 
   window.toggleFilters = function () {
     const btn   = document.getElementById('filterToggle');
     const inner = document.getElementById('sidebarInner');
@@ -66,7 +66,7 @@
     btn.classList.toggle('open', isOpen);
   };
 
-  // ── Attach listeners ──────────────────────────────────────────
+  // ── Attach listeners 
   checkboxes.forEach(cb => cb.addEventListener('change', applyFilters));
 
 })();

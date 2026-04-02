@@ -99,9 +99,7 @@ function initNavigation() {
 }
 
 
-// ==============================
-// ====== SMOOTH SCROLLING ======
-// ==============================
+// SMOOTH SCROLLING
 function smoothScrollTo(target, duration = 500) {
     const targetElement = document.querySelector(target);
     if (!targetElement) return;
@@ -129,9 +127,8 @@ function smoothScrollTo(target, duration = 500) {
     requestAnimationFrame(animation);
 }
 
-// ==============================
-// ====== PARALLAX EFFECTS ======
-// ==============================parallax-1
+// PARALLAX EFFECTS 
+// parallax-1
 function initParallaxEffects() {
     // Existing parallax section
     const parallaxSection = document.querySelector('.parallax-section');
@@ -324,9 +321,7 @@ document.addEventListener('DOMContentLoaded', () => {
     new ReadingsSlider();  // Initialize slider
 });
 
-// ==============================
-// ====== HOVER CARDS ============
-// ==============================
+//HOVER CARDS - keeping this just incase 
 function initHoverCards() {
     const gridItems = document.querySelectorAll('.grid-item');
     let currentCard = null;
@@ -380,36 +375,31 @@ function initHoverCards() {
 function positionCard(card, item) { /* ...same as before... */ }
 function hideCardInstantly(card) { /* ...same as before... */ }
 
-// ==============================
-// ====== SCROLL ANIMATIONS =====
-// ==============================
+
+//SCROLL ANIMATIONS
 function initScrollAnimations() { 
     const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }; 
     const observer = new IntersectionObserver(entries => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateY(0)'; } }); }, observerOptions); const animateElements = document.querySelectorAll('.service-card, .project-card, .about-content'); animateElements.forEach(el => { el.style.opacity = '0'; el.style.transform = 'translateY(30px)'; el.style.transition = 'all 0.6s ease'; observer.observe(el); });
  }
 
-// ==============================
-// ====== CONTACT FORM ============
-// ==============================
+
+// CONTACT FORM 
 function initContactForm() { 
     const contactForm = document.getElementById('contact-form'); if (!contactForm) return; contactForm.addEventListener('submit', e => { e.preventDefault(); const formData = new FormData(contactForm); const name = formData.get('name'); const email = formData.get('email'); const message = formData.get('message'); if (!name || !email || !message) { alert('Please fill in all fields.'); return; } const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; if (!emailRegex.test(email)) { alert('Please enter a valid email address.'); return; } const submitBtn = contactForm.querySelector('.form-submit'); const originalText = submitBtn.textContent; submitBtn.textContent = 'Sending...'; submitBtn.disabled = true; setTimeout(() => { alert("Thank you for your message! I'll get back to you soon."); contactForm.reset(); submitBtn.textContent = originalText; submitBtn.disabled = false; }, 2000); });
 }
 
-// ==============================
-// ====== PROJECT CARDS ==========
-// ==============================
+
+// PROJECT CARDS
 function initProjectCards() { document.querySelectorAll('.project-card').forEach(card => { card.addEventListener('mouseenter', () => card.style.transform = 'translateY(-15px) scale(1.02)'); card.addEventListener('mouseleave', () => card.style.transform = 'translateY(0) scale(1)'); }); }
 
-// ==============================
-// ====== NAV ACTIVE LINKS =======
-// ==============================
+
+// NAV ACTIVE LINKS 
+
 function initActiveNavLinks() {
     const sections = document.querySelectorAll('section[id]'); const navLinks = document.querySelectorAll('.nav-link'); function updateActiveLink() { let current = ''; sections.forEach(section => { const sectionTop = section.offsetTop - 100; const sectionHeight = section.offsetHeight; if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) { current = section.getAttribute('id'); } }); navLinks.forEach(link => { link.classList.remove('active'); if (link.getAttribute('href') === '#' + current) link.classList.add('active'); }); } window.addEventListener('scroll', updateActiveLink);
 }
 
-// ==============================
-// ====== FOOTER ================
-// ==============================
+// FOOTER 
 function initFooter() {
     const newsletterForm = document.getElementById('newsletterForm');
     const emailInput = document.getElementById('emailInput');
@@ -474,9 +464,8 @@ function initFooter() {
     });
 }
 
-// ==============================
-// ====== CSS ANIMATIONS =========
-// ==============================
+
+// CSS ANIMATIONS 
 const style = document.createElement('style');
 style.textContent = `
     @keyframes pulse {
@@ -487,9 +476,8 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// ==============================
-// ====== WINDOW RESIZE =========
-// ==============================
+
+// WINDOW RESIZE 
 window.addEventListener('resize', debounce(() => {
     const navMenu = document.getElementById('nav-menu');
     const navHamburger = document.getElementById('nav-hamburger');
@@ -500,9 +488,8 @@ window.addEventListener('resize', debounce(() => {
     }
 }, 250));
 
-// ==============================
-// ====== INITIALIZE EVERYTHING ==
-// ==============================
+
+// INITIALIZE EVERYTHING 
 document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
     initParallaxEffects();
